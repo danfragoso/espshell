@@ -27,6 +27,7 @@ static const char* TAG = "example";
  * The easiest way to do this is to use FATFS filesystem on top of
  * wear_levelling library.
  */
+
 #if CONFIG_STORE_HISTORY
 
 #define MOUNT_PATH "/data"

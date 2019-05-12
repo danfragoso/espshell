@@ -1,10 +1,9 @@
 # espshell
-___
 
 ESP32 Console and small command line apps.
 
-### To-Do
-____
+# To-Do
+
 #### System
  - #### vfs 
     Virtual file system to mount flash and sdcard
@@ -21,8 +20,8 @@ ____
  - #### mount / umount
     Mount sdcard to vfs.
 
-### Done
-___
+# Done
+
 ### Commands
    - #### hello
      Say hello to the 1st argument.

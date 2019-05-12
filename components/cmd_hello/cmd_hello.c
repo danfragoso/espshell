@@ -7,7 +7,6 @@
 #include "esp_log.h"
 #include "esp_console.h"
 #include "argtable3/argtable3.h"
-#include "cmd_decl.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
 
@@ -26,15 +25,15 @@ static int say_hello(int argc, char **argv)
         arg_print_errors(stderr, join_args.end, argv[0]);
         return 1;
     }
-    ESP_LOGI(__func__, "Hello %s I`m a esp32, nice to meet you!!!",
-             join_args.helloer->sval[0]);
-
+    ESP_LOGI(__func__, "Hello %s, nice to meet you!!!", join_args.helloer->sval[0]);
+    join_args.helloer = NULL;
     return 0;
+    
 }
 
 void register_hello()
 {
-    join_args.helloer = arg_str0(NULL, NULL, "<string>", "Someone to say hello");
+    join_args.helloer = arg_str1(NULL, NULL, "<string>", "Someone to say hello");
     join_args.end = arg_end(0);
 
     const esp_console_cmd_t hello_cmd = {
